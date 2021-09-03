@@ -1,31 +1,29 @@
-// Todo elemento que criar na tela é um componente. 
-// 2 formas para se criar um componente
-//Dps q crio preciso exportar o componente. Posso criar por classes ou por funcoes.
-
-
+// JSX só pode retornar um unico elemento
+// <div> === <>
+// Criei fora a fç formatarNome  para passar junto com a variavel usuario e suas propriedades dentro do objeto.
+//Combinacoes de variaveis, objetos ,funcoes,html
 
 import React from "react";
 
-/*
-#1 //Método antigo
-class App extends React.Component {
-
-    render() {
-        return <h1>Testando 1,2,3</h1>
-    }
-}*/
-
-// + UTILIZADO
-function App() {
-    return <h1>Testando 3,4,5</h1>
+function formatarNome(usuario) {
+    return usuario.nome+' '+usuario.sobrenome;
 }
 
-//+ UTILIZADO
-// let App = () => {
-//     return<h1> estando 6,7,8</h1>
-// };
+function App() {
+    let usuario = {
+         nome:'Carlos',
+         sobrenome:'Lopes',
+         idade: 99
+    };
 
-// let App = () => <h1>Testando 10,11,12</h1>
+    let imagem ='https://www.google.com.br/google.jpg';
+
+    return <>
+        <div>Meu nome é {formatarNome(usuario)}.</div>
+        <div>{1+1}</div>
+        <img src={imagem}/>
+    </>;
+}
 
 export default App;
 
