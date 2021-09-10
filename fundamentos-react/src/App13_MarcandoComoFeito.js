@@ -24,6 +24,14 @@ function App() {
         setList(newList);
     }
 
+    //pegar a propria tarefa da lista e inverter.
+    function handleToggleDone(index) {
+        let newList = [...list];
+        newList[index].done = !newList[index].done
+
+        setList(newList)
+    }
+
     return (
     <>
         <h1>Lista de tarefas </h1>
@@ -36,12 +44,20 @@ function App() {
         <hr/>
         <ul>
             {list.map((item,index)=>(
-                <li key={index}>
+                <li key={index} onClick={()=>handleToggleDone(index)}>
                     {item.done && 
                     <del>{item.title}</del>
                     }
                     {!item.done && 
-                    item.title}
+                    item.title
+                    }
+
+{/* preciso tirar o onClick do li */}
+                    {/* <button onClick={()=>handleToggleDone(index)}>
+                        {item.done && 'Desfazer'}
+                        {!item.done && 'Fazer'}
+                    </button> */}
+
                 </li>
             ))}
         </ul>
