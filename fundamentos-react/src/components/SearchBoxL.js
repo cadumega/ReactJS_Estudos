@@ -1,7 +1,7 @@
 // Passo 1 envio para onEnter e limpa o campo
 // Passo 2 add action em App.js
 
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const InputText = styled.input `
@@ -17,7 +17,7 @@ function SearchBoxL(props) {
     const [texto,setTexto] = useState('');
 
         function handleKeyUp(e) {
-           if(e.keyCode ==13) {
+           if(e.keyCode === 13) {
                if(props.onEnter) {
                    props.onEnter (texto);
                }
