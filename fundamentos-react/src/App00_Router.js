@@ -36,13 +36,13 @@ function App() {
                         <Link to ="/sobre">Sobre</Link>
                      </li>
                      <li>
-                        <Link to ="/categoria?tipo=esportes">Esportes</Link>
+                        <Link to ="/categoria/esportes">Esportes</Link>
                      </li>
                      <li>
-                        <Link to ="/categoria?tipo=noticias">Notícias</Link>
+                        <Link to ="/categoria/noticias">Notícias</Link>
                      </li>
                      <li>
-                        <Link to ="/categoria?tipo=viagem">Viagem</Link>
+                        <Link to ="/categoria/viagem">Viagem</Link>
                      </li>
                   </ul>
                 </nav>
