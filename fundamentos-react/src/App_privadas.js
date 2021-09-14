@@ -21,7 +21,8 @@ import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Categoria from './pages/Categoria';
-
+import Login from './pages/login'
+const isLogged = false;  // não esta logado
 
 function App() {
 
@@ -34,20 +35,9 @@ function App() {
                      <li>
                         <Link to="/">Home</Link>
                      </li>
+
                      <li>
                         <Link to ="/sobre">Sobre</Link>
-                     </li>
-                     <li>
-                        <Link to ="/quem-somos">Quem Somos</Link>
-                     </li>
-                     <li>
-                        <Link to ="/categoria?tipo=esportes">Esportes</Link>
-                     </li>
-                     <li>
-                        <Link to ="/categoria?tipo=noticias">Notícias</Link>
-                     </li>
-                     <li>
-                        <Link to ="/categoria?tipo=viagem">Viagem</Link>
                      </li>
                   </ul>
                 </nav>
@@ -60,22 +50,14 @@ function App() {
                 <Home/>
             </Route>
 
+            <Route  path='/login'> 
+                <Login/>
+            </Route>
+
             <Route path='/sobre'> 
-                <Sobre/>
+                {isLogged ? <Sobre /> : <Redirect to="/loggin"/>}
             </Route>
 
-            <Route exact path='/quem-somos'> 
-            <Redirect to='/sobre'/>
-            </Route>
-
-            <Route path='/categoria/:cat'>  
-                <Categoria/>
-            </Route>
-
-{/* Ultima rota, aceita qualquer coisa, pois as outras não bateram. */}
-            <Route path='*'>  
-                <h4>Página não encontrada</h4>
-            </Route>
         </Switch>
 
             <hr/>
