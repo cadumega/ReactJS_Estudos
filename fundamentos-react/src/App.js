@@ -49,6 +49,7 @@ function App() {
             </header>
             <hr/>
 
+{/* Ordem de verificação da rota */}
         <Switch>
             <Route exact path='/'> 
                 <Home/>
@@ -60,6 +61,11 @@ function App() {
 
             <Route path='/categoria/:cat'>  
                 <Categoria/>
+            </Route>
+
+{/* Ultima rota, aceita qualquer coisa, pois as outras não bateram. */}
+            <Route path='*'>  
+                <h4>Página não encontrada</h4>
             </Route>
         </Switch>
 
